@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="row">
+    
+        <div class="card mt-5">
+          <div class="card-body">
+           <h1 class="titulo bg-primary">Contacto 
+
+            <div *ngIf="loading" class="spinner-border float-end" role="status">
+              <span class="visually-hidden">Loading...</span>
+         </div><i class="bi bi-person-lines-fill"></i></h1>
+
+        <form (ngSubmit) = "guardarTarjeta()" [formGroup]="forma" class="bg-primary">
+
+
+         <div class="input-group input-group-lg mb-3">
+         <span class="input-group-text">
+         <i class="fa-solid fa-circle-user" [class.green-bar]="usuario" [class.red-bar]="usuarioNoValido"></i></span>
+         <input type="text" formControlName="usuario"
+        class="form-control" placeholder="Usuario">
+        </div>
+
+
+       <div class="input-group input-group-lg mb-3">
+       <span class="input-group-text">
+       <i class="fa-solid fa-envelope" [class.green-bar]="email" [class.red-bar]="emailNoValido"
+       ></i></span>
+      <input type="text" formControlName="email"
+       maxlength="25" class="form-control" placeholder="Email">
+       </div>
+
+
+     <div class="input-group input-group-lg mb-3">
+    <span class="input-group-text">
+    <i class="fa-solid fa-mobile-retro" [class.green-bar]="mobil" [class.red-bar]="mobilNoValido"
+    ></i></span>
+    <input type="text" formControlName="mobil"
+    maxlength="18" class="form-control" placeholder="Mobil">
+    </div>
+
+    <!--Boton-->
+    
+      <div class="d-grid gap-2">
+       <button class="btn btn-success btn-lg" type="submit" [disabled]="this
+       .forma.invalid"><i class="bi bi-send-check"></i> Enviar</button>
+      </div>
+
+    </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>

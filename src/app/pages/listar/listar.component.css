@@ -1,0 +1,25 @@
+.fa-solid  {
+    cursor: pointer;
+    margin-left: 8px;
+    align-items: center;
+
+}
+
+.texto {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    background-color: bisque;
+    border-radius: 7px;
+
+}
+
+th {
+    text-align: center;
+    font-size: 13px;
+}
+
+td {
+    text-align: center;
+    font-size: 12px;
+}
