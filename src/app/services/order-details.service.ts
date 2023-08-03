@@ -23,6 +23,12 @@ export class OrderDetailsService {
 
       }
 
+      //Eliminar
+
+      eliminarTarjeta(id:string):Promise<any> {
+        return this.firebase.collection('tarjetas').doc(id).delete();
+      }
+
  // fooddetails 
   
  foodDetails = [

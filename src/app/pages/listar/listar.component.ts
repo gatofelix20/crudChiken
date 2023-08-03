@@ -3,6 +3,8 @@ import { OrderDetailsService } from '../../services/order-details.service';
 import { TarjetaCredito } from '../../models/TarjetaCredito';
 import { elementAt } from 'rxjs';
 
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
@@ -41,6 +43,29 @@ export class ListarComponent implements OnInit{
 
       })
 
+  }
+
+  eliminarTarjeta(id: any) {
+   
+   Swal.fire({
+   
+    icon: 'question',
+    title: 'Desea eliminar el Usuario?',
+    showCloseButton: true,
+    confirmButtonText: 'Eliminar'
+
+   }).then((result)=>{
+
+      if(result.isConfirmed) {
+
+       this.tarjetaSvc.eliminarTarjeta(id).then(()=>{
+        
+       })
+
+      }
+
+   })
+    
   }
 
 }
